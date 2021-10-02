@@ -1,8 +1,9 @@
-import React, {useContext} from 'react';
-import AnchorLink from 'react-anchor-link-smooth-scroll';
-import { ThemeContext } from 'providers/ThemeProvider';
-import ToggleTheme from 'components/theme/Header/ToggleTheme';
-import { Wrapper } from './styles';
+import React, { useContext } from "react";
+import AnchorLink from "react-anchor-link-smooth-scroll";
+import { ThemeContext } from "providers/ThemeProvider";
+import ToggleTheme from "components/theme/Header/ToggleTheme";
+import { Wrapper } from "./styles";
+import { Button } from "components/common";
 
 const NavbarLinks = ({ desktop }) => {
   const { theme } = useContext(ThemeContext);
@@ -12,10 +13,12 @@ const NavbarLinks = ({ desktop }) => {
       <AnchorLink href="#about">About</AnchorLink>
       <AnchorLink href="#projects">Projects</AnchorLink>
       <AnchorLink href="#contact">Contact</AnchorLink>
+      <Button as="a" href="/internal/dashboard">
+        Login
+      </Button>
       <ToggleTheme />
     </Wrapper>
-  )
-
+  );
 };
 
 export default NavbarLinks;
